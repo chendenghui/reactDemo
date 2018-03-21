@@ -72,7 +72,25 @@ let config = merge(baseWebpackConfig, {
 
                 ],
 
-            }
+            },
+            {
+
+                test:/\.(css|pcss)$/,
+
+               loader:'style-loader?sourceMap!css-loader?sourceMap!postcss-loader?sourceMap',
+
+               exclude:/node_modules/
+                
+           },
+                
+           {
+                
+                test:/\.(png|jpg|gif|ttf|eot|woff|woff2|svg|swf)$/,
+
+               loader:'file-loader?name=[name].[ext]&outputPath=' +webpackFile.resource +'/'
+
+           }
+
 
         ]
 
@@ -102,7 +120,7 @@ let config = merge(baseWebpackConfig, {
 
                 context: ['/api/**', '/u/**'],
 
-                target:'http://192.168.12.100:8080/',
+                target:'http://127.0.0.1/',
 
                 secure:false
 
