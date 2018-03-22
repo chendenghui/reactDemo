@@ -1,6 +1,6 @@
-import React from 'react';
+import React,{Component} from 'react';
 
-class Index extends React.Component {
+class Seconds extends Component {
 
     constructor(props) {
 
@@ -8,7 +8,7 @@ class Index extends React.Component {
 
         this.state = {seconds:0 };
 
-    }
+}
 
     tick() {
 
@@ -33,11 +33,15 @@ class Index extends React.Component {
     }
 
     render() {
-
+        const {title} = this.props;
         return (
-            <div>
-
-           这是首页Seconds {this.state.seconds}
+            <div className="cont">
+                <div className="top">
+                    <i className="logo"></i>
+                    这是{title}
+                    Seconds {this.state.seconds}
+                </div>
+                <div className="bottom"></div>
             </div>
 
 
@@ -47,4 +51,4 @@ class Index extends React.Component {
 
 }
 
-export default Index;
+export default Seconds;
