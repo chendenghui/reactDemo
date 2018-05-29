@@ -1,13 +1,8 @@
 const webpack =require('webpack');//引入webpack
-
 const opn =require('opn');//打开浏览器
-
 const merge =require('webpack-merge');//webpack配置文件合并
-
 const path =require("path");
-
 const baseWebpackConfig =require("./webpack.base.conf");//基础配置
-
 const webpackFile =require("./webpack.file.conf");//一些路径配置
 
 let config = merge(baseWebpackConfig, {
